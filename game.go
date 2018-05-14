@@ -12,7 +12,10 @@ type ack = func(form Form)
 // Game interface engine
 type Game interface {
 	On(name string, ack ack)
-	Start() *Error
-	Pause() *Error
-	Finish() *Error
+	Init() error
+	Start() error
+	Update() error
+	Pause() error
+	Finish() error
+	Shutdown() error
 }
