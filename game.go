@@ -14,7 +14,7 @@ type Game interface {
 	On(name string, ack ack)
 	Init() error
 	Start() error
-	Update(msg string) error
+	Update(msg []byte) error
 	Pause() error
 	Finish() error
 	Shutdown() error
