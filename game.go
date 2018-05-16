@@ -7,11 +7,12 @@ type Form = struct {
 	Signature string
 }
 
-type ack = func(form Form)
+// Ack is callback
+type Ack = func(form Form)
 
 // Game interface engine
 type Game interface {
-	On(name string, ack ack)
+	On(name string, ack Ack)
 	Init() error
 	Start() error
 	Update(msg []byte) error
